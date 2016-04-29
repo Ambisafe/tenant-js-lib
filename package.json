@@ -1,0 +1,23 @@
+{
+  "name": "tenant-js-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ambisafe/tenant-js-lib.git"
+  },
+  "author": "Johann Barbie <johannbarbie@me.com> (http://johba.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ambisafe/tenant-js-lib/issues"
+  },
+  "homepage": "https://github.com/Ambisafe/tenant-js-lib#readme",
+  "dependencies": {
+    "jsonwebtoken": "^6.1.2",
+    "node-uuid": "^1.4.7"
+  }
+}
