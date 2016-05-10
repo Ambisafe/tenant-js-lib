@@ -38,6 +38,8 @@ var token = ambi.issueRecoveryToken();
 ### Co-Signing
 
 ```javascript
+//execute 2fa
+var posSender = //read from db;
 var msgData = '0x123';
 var token = ambi.issueCosignToken(msgData, posSender);
 ```
