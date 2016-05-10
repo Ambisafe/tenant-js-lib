@@ -1,4 +1,4 @@
-# Ambisafe SaaS Tenant Library
+,# Ambisafe SaaS Tenant Library
 
 This library allows to issue one-time, consumable bearer tokens that represent permissions to the Ambisafe SaaS services. Each Tentant (Business Customer of Ambisafe) can use this library, together with an active subscription and the derived API keys to delegate access to its users. 
 
@@ -39,5 +39,5 @@ var token = ambi.issueRecoveryToken();
 
 ```javascript
 var msgData = '0x123';
-var token = ambi.issueCosignToken(msgData);
+var token = ambi.issueCosignToken(msgData, posSender);
 ```
