@@ -39,7 +39,7 @@ var token = ambi.issueRecoveryToken();
 
 ```javascript
 //execute 2fa
-var posSender = //read from db;
+var sender = //read from db;
 var msgData = '0x123';
-var token = ambi.issueCosignToken(msgData, posSender);
+var token = ambi.issueCosignToken(msgData, sender);
 ```

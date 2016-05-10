@@ -31,10 +31,10 @@ AmbiTenant.prototype.issueRecoveryToken = function() {
   return jwt.sign(token, this.keySecret);
 };
 
-AmbiTenant.prototype.issueCosignToken = function(msgData, posSender) {
+AmbiTenant.prototype.issueCosignToken = function(msgData, sender) {
   var token = this.createPayload('cosign');
   token.msgData = msgData;
-  token.posSender = posSender;
+  token.sender = sender;
   return jwt.sign(token, this.keySecret);
 };
 
