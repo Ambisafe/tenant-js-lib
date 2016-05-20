@@ -21,8 +21,9 @@ AmbiTenant.prototype.issueStorageToken = function() {
   return jwt.sign(token, this.keySecret);
 };
 
-AmbiTenant.prototype.issueFaucetToken = function() {
+AmbiTenant.prototype.issueFaucetToken = function(amount) {
   var token = this.createPayload('faucet');
+  token.amount = amount;
   return jwt.sign(token, this.keySecret);
 };
 
