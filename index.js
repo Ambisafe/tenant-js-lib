@@ -61,7 +61,7 @@ AmbiTenant.prototype.recoveryRequest = function(oldAddr, newAddr, signerKey) {
     nonce: uuid.unparse(nonceBuffer, 16),
     r: sig.r.toString('hex'),
     s: sig.s.toString('hex'),
-    v: sig.v + 4
+    v: sig.v
   };
 };
 
@@ -80,7 +80,7 @@ AmbiTenant.prototype.recoverySetup = function(userAddress, signerKey) {
     nonce: uuid.unparse(nonceBuffer, 16),
     r: sig.r.toString('hex'),
     s: sig.s.toString('hex'),
-    v: sig.v + 4
+    v: sig.v
   };
 }
 
