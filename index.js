@@ -48,10 +48,9 @@ AmbiTenant.prototype.generateKey = function() {
 AmbiTenant.prototype.recoveryRequest = function(oldAddr, newAddr, signerKey) {
   var nonceBuffer = new Buffer(32);
   nonceBuffer.fill(0);
-  //uuid.v4(null, nonceBuffer, 16);
+  uuid.v4(null, nonceBuffer, 16);
 
   var priv = new Buffer(signerKey, 'hex');
-  console.log(ethUtil.privateToAddress(priv).toString('hex'));
   var oldAddr = new Buffer(oldAddr, 'hex');
   var newAddr = new Buffer(newAddr, 'hex');
 
@@ -59,7 +58,7 @@ AmbiTenant.prototype.recoveryRequest = function(oldAddr, newAddr, signerKey) {
 
   var sig = ethUtil.ecsign(hash, priv);
   return {
-    nonce: nonceBuffer.toString('hex'),//uuid.unparse(nonceBuffer, 16),
+    nonce: uuid.unparse(nonceBuffer, 16),
     r: sig.r.toString('hex'),
     s: sig.s.toString('hex'),
     v: sig.v + 4
@@ -67,10 +66,9 @@ AmbiTenant.prototype.recoveryRequest = function(oldAddr, newAddr, signerKey) {
 };
 
 AmbiTenant.prototype.recoverySetup = function(userAddress, signerKey) {
-  //var nonceBuffer = new Buffer(32);
-  //nonceBuffer.fill(0);
-  //uuid.v4(null, nonceBuffer, 16);
-  var nonceBuffer = new Buffer([ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]);
+  var nonceBuffer = new Buffer(32);
+  nonceBuffer.fill(0);
+  uuid.v4(null, nonceBuffer, 16);
 
   var priv = new Buffer(signerKey, 'hex');
   var addr = new Buffer(userAddress, 'hex');
@@ -79,7 +77,7 @@ AmbiTenant.prototype.recoverySetup = function(userAddress, signerKey) {
 
   var sig = ethUtil.ecsign(hash, priv);
   return {
-    nonce: nonceBuffer.toString('hex'),//uuid.unparse(nonceBuffer, 16),
+    nonce: uuid.unparse(nonceBuffer, 16),
     r: sig.r.toString('hex'),
     s: sig.s.toString('hex'),
     v: sig.v + 4
